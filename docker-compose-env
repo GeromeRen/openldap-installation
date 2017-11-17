@@ -1,0 +1,21 @@
+#!/bin/bash
+export INITIAL_ADMIN_USER="administrator"
+export INITIAL_ADMIN_PASSWORD="gerome"
+export LDAP_PWD="gerome"
+export CUSTOM_NETWORK_NAME="ADOPCDC_NETWORK"
+
+#defautl
+export LDAP_SERVER="ldap:389"
+export LDAP_DOMAIN="ldap.example.com"
+export LDAP_FULL_DOMAIN="dc=ldap,dc=example,dc=com"
+export LDAP_ADMIN="cn=admin"
+
+if ! docker network create ${CUSTOM_NETWORK_NAME} &> /dev/null; then 
+   echo "Network already exists: ${CUSTOM_NETWORK_NAME}"
+else
+   echo "Created Docker network: ${CUSTOM_NETWORK_NAME}" 
+fi
+
+ 
+
+
